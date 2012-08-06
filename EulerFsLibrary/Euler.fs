@@ -3,15 +3,14 @@
 open System
 
 module Euler4 =
-    let rev (x : int) = 
-            x.ToString().ToCharArray()
-            |> Array.rev
+    let revNumberToCharArray x = x.ToString().ToCharArray()
+                                |> Array.rev
 
-    let revNumber x = String.Join(null, rev x)
+    let revNumberToString x = String.Join(null, revNumberToCharArray x)
 
-    let isPal x = x.ToString() = revNumber x
+    let isPalindrome x = x.ToString() = revNumberToString x
 
-    let isProductPal (x, y) = isPal (x * y)
+    let isProductPalindrome (x, y) = isPalindrome (x * y)
 
     let rec count x =
         if x >= 999 then
@@ -19,12 +18,12 @@ module Euler4 =
         else
             count (x + 1)
 
-    let palindrome() =
+    let palindrome =
         let mutable max = 0
         for i = 999 downto 100 do
             for j = 999 downto i do
                 if i * j > max then
-                    if (isProductPal (i, j)) then
+                    if (isProductPalindrome (i, j)) then
                         max <- i * j
         printfn "%d" max
 
