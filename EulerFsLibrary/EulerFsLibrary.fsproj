@@ -38,6 +38,8 @@
     <Compile Include="Euler11.fs" />
     <Compile Include="Euler12.fs" />
     <Compile Include="Euler22.fs" />
+    <Content Include="names.txt" />
+    <Compile Include="Euler36.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
