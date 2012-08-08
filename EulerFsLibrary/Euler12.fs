@@ -1,4 +1,4 @@
-﻿namespace EulerFsLibrary
+﻿namespace EulerFs
 
 module Euler12 = 
     let triangle x = x * (x + 1) / 2

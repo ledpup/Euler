@@ -57,9 +57,9 @@
       <Project>{98F0C5A8-3C85-4150-A112-2A1949AF177F}</Project>
       <Name>EulerCs</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EulerFsLibrary\EulerFsLibrary.fsproj">
+    <ProjectReference Include="..\EulerFsLibrary\EulerFs.fsproj">
       <Project>{AAFE85F9-0920-437B-8AC0-074745236AF7}</Project>
-      <Name>EulerFsLibrary</Name>
+      <Name>EulerFs</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

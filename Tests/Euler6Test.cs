@@ -72,7 +72,7 @@ namespace Tests
         {
             int expected = 25164150;
             int actual;
-            actual = EulerFsLibrary.Euler6.result;
+            actual = EulerFs.Euler6.result;
             Assert.AreEqual(expected, actual);
         }
     }

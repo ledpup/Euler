@@ -9,7 +9,7 @@ namespace EulerCs
     {
         public static int Result()
         {
-            var range = EulerFsLibrary.Euler9.range;
+            var range = EulerFs.Euler9.range;
 
             foreach (var a in range)
             {

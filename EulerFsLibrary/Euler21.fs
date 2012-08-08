@@ -1,4 +1,4 @@
-﻿namespace EulerFsLibrary
+﻿namespace EulerFs
 
 module Euler21 = 
         let factors number = seq { for divisor in 1 .. (float >> sqrt >> int) number do

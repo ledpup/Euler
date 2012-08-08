@@ -1,4 +1,4 @@
-﻿namespace EulerFsLibrary
+﻿namespace EulerFs
 
 open System
 
