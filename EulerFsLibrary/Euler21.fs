@@ -12,19 +12,11 @@ module Euler21 =
 
         let amicablePair (x, y) = x <> y && (sumProperDivisors y) = x && (sumProperDivisors x) = y
 
-        let _220 = sumProperDivisors 220 = 284
-        let _284 = sumProperDivisors 284 = 220
+        let test220 = sumProperDivisors 220 = 284
+        let test284 = sumProperDivisors 284 = 220
 
-        let test = amicablePair (220, 284)
-
-        let second (x, y) = [1..y]
+        let testAmicablePair = amicablePair (220, 284)
         
-        let am x = [x + 1..9999]
-                        |> List.filter (fun y -> amicablePair (x, y))
-
-        let blah = am 220
-
         let allAmicablePairs = [1..9999]
-                                    |> List.collect (fun x -> am x)
+                                    |> List.filter (fun x -> amicablePair (x, (sumProperDivisors x)))
                                     |> List.sum
-
