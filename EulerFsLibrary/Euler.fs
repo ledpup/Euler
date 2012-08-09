@@ -41,7 +41,7 @@ module Euler8 =
     
     let productSeq x =
         Seq.windowed x sequence
-        |> Seq.map (fun i -> (i |> Seq.fold (fun acc x -> acc * x) 1))
+        |> Seq.map (fun i -> (i |> Seq.fold (fun acc y -> acc * y) 1))
 
     let highest x = productSeq x |> Seq.max  
 
