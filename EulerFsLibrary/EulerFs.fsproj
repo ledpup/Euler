@@ -44,6 +44,7 @@
     <Content Include="words.txt" />
     <Compile Include="Euler21.fs" />
     <Compile Include="Euler23.fs" />
+    <Compile Include="Euler45.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
