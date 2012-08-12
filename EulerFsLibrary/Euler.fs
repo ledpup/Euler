@@ -187,7 +187,9 @@ module Euler25 =
             | 1 | 2 -> 1
             | x -> fibonaci(x - 1) + fibonaci(x - 2)
 
-    let resultLength x = (fibonaci x).ToString().Length
+    
+    let rec fib x n = match x with
+                        | x when x.ToString().Length = 11 -> x
+                        | _ -> fib (x + n) x
 
-
-            
+    let dsa = fib 1 1

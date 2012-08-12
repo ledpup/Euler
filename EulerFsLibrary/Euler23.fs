@@ -5,6 +5,8 @@ module Euler23 =
                                 if number % divisor = 0 then
                                     yield divisor
                                     yield number / divisor }
+                            |> Set.ofSeq
+                            |> Set.toSeq
         
     let sumProperDivisors number = factors number
                                         |> Seq.filter (fun x -> x <> number)
@@ -14,14 +16,24 @@ module Euler23 =
     let isDeficientNumber number = sumProperDivisors number < number
     let isAbundantNumber number = sumProperDivisors number > number
 
+    let four = isDeficientNumber 4
     let twelve = isAbundantNumber 12
     let twentyEight = isPerfectNumber 28
 
-    let abundantNumbers = [12..28123]
+    let abundantNumbers = [1..28123]
                             |> List.filter (fun x -> isAbundantNumber x)
 
-    let matchingAbundantNumbers x = abundantNumbers
-                                        |> List.filter (fun y -> y < x && x % y = 0)
+    let crossproduct l1 l2 =
+                        seq { for el1 in l1 do
+                                for el2 in l2 do
+                                    yield el1, el2 }
 
-
-                    
+    let sumAbundantNumbers = crossproduct abundantNumbers abundantNumbers
+                                        |> Seq.map (fun (x, y) -> x + y)
+                                        |> Seq.filter (fun x -> x <= 28123)
+                                        |> Seq.toList
+    
+    let nonAbundant = [1..28123] 
+                            |> List.filter (fun x -> not (sumAbundantNumbers |> List.exists(fun y -> y = x)))
+                            |> List.sum
+                                                                

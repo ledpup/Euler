@@ -21,12 +21,22 @@ module Euler45 =
                                                 | number when hexagonal number < target -> 0
                                                 | _ -> failwith "Invalid input"
 
-    let rec findTriangle t = match t with
-                                            | t when findPentagonal t (triangle t) <> 0 && findHexagonal t (triangle t) <> 0 -> triangle t
-                                            | t when findPentagonal t (triangle t) = 0 || findHexagonal t (triangle t) = 0 -> findTriangle t + 1
-                                            | _ -> failwith "Invalid"
-                                            
+    let dsa = findHexagonal 287 (triangle 287)
+    let dsa2 = findPentagonal 287 (triangle 287)
 
+    let dscv = dsa = 0 || dsa2 = 0
 
-    let blah = findTriangle 286
+    let rec findTriangle t =  
+                                let mutable continueLooping = true
+                                let mutable x = t
+                                while continueLooping do
+                                       continueLooping <- (findPentagonal x (triangle x) = 0 || findHexagonal x (triangle x) = 0)
+                                       if continueLooping then x <- x + 1
+                                       //printfn "%A" x
+
+                                x
+
+    let r = findTriangle 285
+
+    let r2 = findTriangle 286
 
