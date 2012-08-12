@@ -173,8 +173,6 @@ module Euler20 =
 
     let convert (x : char) = Convert.ToInt32(x) - 48
 
-    
-
     let sumOfDigits (x : bigint) =
             x.ToString().ToCharArray()
             |> Seq.map (string >> int)
@@ -187,9 +185,19 @@ module Euler25 =
             | 1 | 2 -> 1
             | x -> fibonaci(x - 1) + fibonaci(x - 2)
 
-    
-    let rec fib x n = match x with
-                        | x when x.ToString().Length = 11 -> x
-                        | _ -> fib (x + n) x
+    let rec forwardFib x n = match x with
+                                | x when x.ToString().Length = 100 -> x
+                                | _ -> forwardFib (x + n) x
 
-    let dsa = fib 1 1
+    let fib = let mutable previous:bigint = 1I
+              let mutable current:bigint = 1I
+              let mutable temp:bigint = 0I
+              let mutable count = 2
+              while current.ToString().Length <> 1000 do
+                    temp <- current
+                    current <- previous + current
+                    previous <- temp
+                    count <- count + 1
+              count
+
+    

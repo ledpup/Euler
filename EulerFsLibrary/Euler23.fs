@@ -23,12 +23,12 @@ module Euler23 =
     let abundantNumbers = [1..28123]
                             |> List.filter (fun x -> isAbundantNumber x)
 
-    let crossproduct l1 l2 =
+    let crossProduct l1 l2 =
                         seq { for el1 in l1 do
                                 for el2 in l2 do
                                     yield el1, el2 }
 
-    let sumAbundantNumbers = crossproduct abundantNumbers abundantNumbers
+    let sumAbundantNumbers = crossProduct abundantNumbers abundantNumbers
                                         |> Seq.map (fun (x, y) -> x + y)
                                         |> Seq.filter (fun x -> x <= 28123)
                                         |> Seq.toList
