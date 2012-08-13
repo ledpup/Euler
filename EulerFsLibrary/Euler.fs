@@ -185,9 +185,11 @@ module Euler25 =
             | 1 | 2 -> 1
             | x -> fibonaci(x - 1) + fibonaci(x - 2)
 
-    let rec forwardFib x n = match x with
-                                | x when x.ToString().Length = 100 -> x
-                                | _ -> forwardFib (x + n) x
+    let rec forwardFib (current:bigint) (previous:bigint) count = match current with
+                                                                    | current when current.ToString().Length = 1000 -> count
+                                                                    | _ -> forwardFib (current + previous) current (count + 1)
+
+    let result = forwardFib 1I 1I 2
 
     let fib = let mutable previous:bigint = 1I
               let mutable current:bigint = 1I
