@@ -2,12 +2,9 @@
 
 module Euler29 =
 
-    let crossProduct l1 l2 =
-                        seq { for el1 in l1 do
-                                for el2 in l2 do
-                                    yield el1, el2 }
+    let cartesian xs ys = xs |> List.collect (fun x -> ys |> List.map (fun y -> x, y))
 
-    let series = crossProduct [2I..100I] [2..100] 
+    let series = cartesian [2I..100I] [2..100] 
                                 |> Seq.map (fun (x, y) -> pown x y)
                                 |> Set.ofSeq
                                 |> Set.count
