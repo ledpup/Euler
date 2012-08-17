@@ -3,11 +3,7 @@
 open System
 
 module Euler36 =
-
-    let revNumberToCharArray x = x.ToString().ToCharArray()
-                                |> Array.rev
-
-    let revNumberToString x = String.Join(null, revNumberToCharArray x)
+    let revNumberToString x = new string (x.ToString().ToCharArray() |> Array.rev)
 
     let isPalindrome x = x.ToString() = revNumberToString x
 
