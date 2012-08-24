@@ -57,6 +57,7 @@
     <Compile Include="Euler56.fs" />
     <Compile Include="Euler30.fs" />
     <Compile Include="Euler55.fs" />
+    <Compile Include="Euler18.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
