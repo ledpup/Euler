@@ -13,7 +13,7 @@ namespace EulerCs
 
             var sw = new Stopwatch();
             sw.Start();
-
+            
             Console.WriteLine(Euler48.LastTenDigitsOfPowers());
 
             Console.WriteLine(sw.ElapsedMilliseconds);
