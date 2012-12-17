@@ -13,6 +13,7 @@ module Euler42 =
 
     let triangleNumber x = x * (x + 1) / 2
 
+    // Note: You may need to change the path to be able to read the file from the correct location.
     let words = File.ReadAllText(@"C:\Users\ledpup\Documents\GitHub\Euler\EulerFsLibrary\words.txt").Replace("\"","").Split(',')
                                                     |> List.ofArray
 

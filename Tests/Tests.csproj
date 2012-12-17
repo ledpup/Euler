@@ -59,6 +59,7 @@
     </ProjectReference>
     <ProjectReference Include="..\EulerFs\EulerFs.fsproj">
       <Project>{AAFE85F9-0920-437B-8AC0-074745236AF7}</Project>
+      <Project>{aafe85f9-0920-437b-8ac0-074745236af7}</Project>
       <Name>EulerFs</Name>
     </ProjectReference>
   </ItemGroup>

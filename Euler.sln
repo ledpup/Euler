@@ -1,14 +1,14 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EulerCs", "EulerCs\EulerCs.csproj", "{98F0C5A8-3C85-4150-A112-2A1949AF177F}"
-EndProject
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A4134C36-B1F2-4FD9-9446-5C5811223FB8}"
 	ProjectSection(SolutionItems) = preProject
 		Euler.vsmdi = Euler.vsmdi
 		Local.testsettings = Local.testsettings
 		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EulerCs", "EulerCs\EulerCs.csproj", "{98F0C5A8-3C85-4150-A112-2A1949AF177F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{8B675127-3807-49E7-8B43-3D0334668E31}"
 EndProject

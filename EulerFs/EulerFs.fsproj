@@ -31,8 +31,12 @@
     <WarningLevel>3</WarningLevel>
     <DocumentationFile>bin\Release\EulerFsLibrary.XML</DocumentationFile>
   </PropertyGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\FSharp\1.0\Microsoft.FSharp.Targets" Condition="!Exists('$(MSBuildBinPath)\Microsoft.Build.Tasks.v4.0.dll')" />
-  <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft F#\v4.0\Microsoft.FSharp.Targets" Condition=" Exists('$(MSBuildBinPath)\Microsoft.Build.Tasks.v4.0.dll')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets" Condition="Exists('$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets')" />
+  <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft F#\v4.0\Microsoft.FSharp.Targets" Condition="(!Exists('$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets')) And (Exists('$(MSBuildExtensionsPath32)\..\Microsoft F#\v4.0\Microsoft.FSharp.Targets'))" />
+  <Import Project="$(MSBuildExtensionsPath32)\FSharp\1.0\Microsoft.FSharp.Targets" Condition="(!Exists('$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets')) And (!Exists('$(MSBuildExtensionsPath32)\..\Microsoft F#\v4.0\Microsoft.FSharp.Targets')) And (Exists('$(MSBuildExtensionsPath32)\FSharp\1.0\Microsoft.FSharp.Targets'))" />
   <ItemGroup>
     <Compile Include="Euler.fs" />
     <Compile Include="Euler11.fs" />
@@ -49,7 +53,6 @@
     <Compile Include="Euler24.fs" />
     <Compile Include="Euler29.fs" />
     <Compile Include="Euler40.fs" />
-    <Compile Include="Euler26.fs" />
     <Compile Include="Euler27.fs" />
     <Compile Include="Euler28.fs" />
     <Compile Include="Euler52.fs" />
@@ -58,6 +61,11 @@
     <Compile Include="Euler30.fs" />
     <Compile Include="Euler55.fs" />
     <Compile Include="Euler18.fs" />
+    <Content Include="triangle.txt" />
+    <Compile Include="Euler67.fs" />
+    <Compile Include="Euler15.fs" />
+    <Compile Include="Euler34.fs" />
+    <Compile Include="Euler26.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />

@@ -1,6 +1,9 @@
 ﻿namespace EulerFs
 
 module Euler27 =
+
+    // UNFINSIHED
+
     let factors number = seq { for divisor in 1 .. (float >> sqrt >> int) number do
                                 if number % divisor = 0 then
                                     yield divisor
